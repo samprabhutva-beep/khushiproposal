@@ -1,6 +1,8 @@
 import { useState } from "react";
 import lovesvg from "./assets/All You Need Is Love SVG Cut File.svg";
 import lovesvg2 from "./assets/Love In The Air SVG Cut File.svg";
+import khushi2 from "./assets/khushi.jpeg";
+import khushi1 from "./assets/khushi2.jpeg";
 
 export default function Page() {
   const [noCount, setNoCount] = useState(0);
@@ -11,11 +13,17 @@ export default function Page() {
     setNoCount(noCount + 1);
   };
 
+  const [showImage, setShowImage] = useState(false);
+  const [showImage2, setShowImage2] = useState(false);
+
   const getNoButtonText = () => {
     const phrases = [
       "No",
       "Are you sure?",
       "Really sure?",
+      "Think again jaan🥲",
+      "You making me cry :(",
+      "Why not mera baccha",
       "Think again!",
       "Last chance!",
       "Surely not?",
@@ -53,6 +61,20 @@ export default function Page() {
             className="fixed animate-pulse top-10 md:left-24 left-6 md:w-40 w-28"
           />
           <img
+            src={khushi1}
+            onClick={() => setShowImage(true)}
+            className={`fixed bottom-6 md:left-24 left-6 md:w-40 w-28 rounded-lg transition-opacity duration-300 cursor-pointer ${
+              showImage ? "opacity-100" : "opacity-0 hover:opacity-100"
+            }`}
+          />
+          <img
+            src={khushi2}
+            onClick={() => setShowImage2(true)}
+            className={`fixed top-10 md:right-24 right-10 md:w-40 w-32 rounded-lg transition-opacity duration-300 cursor-pointer ${
+              showImage2 ? "opacity-100" : "opacity-0 hover:opacity-100"
+            }`}
+          />
+          <img
             src={lovesvg2}
             className="fixed bottom-16 -z-10 animate-pulse md:right-24 right-10 md:w-40 w-32"
           />
@@ -61,7 +83,7 @@ export default function Page() {
             src="https://gifdb.com/images/high/cute-love-bear-roses-ou7zho5oosxnpo6k.webp"
           />
           <h1 className="text-4xl md:text-6xl my-4 text-center">
-            Will you be my Valentine?
+            Will you be my Girlfriend?
           </h1>
           <div className="flex flex-wrap justify-center gap-2 items-center">
             <button
@@ -88,13 +110,13 @@ export default function Page() {
 const Footer = () => {
   return (
     <a
-      className="fixed bottom-2 right-2 backdrop-blur-md opacity-80 hover:opacity-95 border p-1 rounded border-rose-300"
+      className="fixed bottom-2 backdrop-blur-md opacity-80 hover:opacity-95 border p-1 rounded border-rose-300"
       href="https://github.com/Xeven777/valentine"
       target="__blank"
     >
       Made with{" "}
       <span role="img" aria-label="heart">
-        ❤️
+        ❤️ by Hirdesh
       </span>
     </a>
   );
